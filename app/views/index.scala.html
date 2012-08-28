@@ -46,10 +46,10 @@ blink = function()
     var m = Math.floor((secondsLeft % 3600) / 60);
     var s = (secondsLeft % 60);
 
-    document.getElementById('day_count').innerText = padNum(d);
-    document.getElementById('hour_count').innerText = padNum(h);
-    document.getElementById('minute_count').innerText = padNum(m);
-    document.getElementById('second_count').innerText = padNum(s);
+    document.getElementById('day_count').innerHTML = padNum(d);
+    document.getElementById('hour_count').innerHTML = padNum(h);
+    document.getElementById('minute_count').innerHTML = padNum(m);
+    document.getElementById('second_count').innerHTML = padNum(s);
 
     secondsLeft--;
 
