@@ -1,0 +1,70 @@
+@font-face {
+	font-family: "Visitor";
+	src: url("visitor.ttf");
+}
+
+body {
+	margin: 0;
+	height: auto;
+	border-top: 1px solid rgba(255,255,255,0.7);
+	background: rgb(35, 38, 35) -webkit-gradient(linear, left top, left bottom, from(rgb(65, 68, 65)), to(rgb(35, 38, 35))) no-repeat;
+	
+	min-height: 80px;
+	color: white;
+}
+
+
+h1.banner {
+	margin-top: 60px;
+	text-align: center;
+	font-family: "Gill Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: lighter;
+	font-size: 16px;
+	color: rgb(170,170,170);
+}
+
+h1.banner a {
+	color: rgb(220,220,220);
+}
+h1.banner a:hover {
+	color:white;
+}
+
+#counter {
+	text-align: center;
+}
+
+#day_count, #hour_count, #minute_count, #second_count {
+	display: inline-block;
+	width: 160px;
+	margin: 0;
+	font-size: 160px;
+	font-family: Visitor, sans-serif;
+}
+
+#day_count:after, #hour_count:after, #minute_count:after, #second_count:after {
+	color: rgb(128,128,128);
+	font-size: 32px;
+	display: block;
+	position: relative;
+	width: 100%;
+	clear: both;
+	top: -8px;
+	text-align: center;
+}
+
+#day_count:after {
+	content: "DAYS";
+}
+
+#hour_count:after {
+	content: "HOURS";
+}
+
+#minute_count:after {
+	content: "MINS";
+}
+
+#second_count:after {
+	content: "SECS";
+}

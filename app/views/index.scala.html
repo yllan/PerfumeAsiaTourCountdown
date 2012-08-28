@@ -1,0 +1,61 @@
+@(secondsLeft: Long)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Perfume 台北倒數計時</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    </head>
+
+  <body>
+<script>
+var secondsLeft = @secondsLeft;
+var lastSeconds = 61;
+var blinkInterval;
+
+padNum = function(n) {
+  var s = "" + n;
+  if (s.length == 1) return "0" + s;
+  return s;
+}
+
+blink = function()
+{
+  var currentSeconds = new Date().getSeconds();
+  if (lastSeconds != currentSeconds) {
+    lastSeconds = currentSeconds;
+    var d = Math.floor(secondsLeft / 86400);
+    var h = Math.floor((secondsLeft % 86400) / 3600);
+    var m = Math.floor((secondsLeft % 3600) / 60);
+    var s = (secondsLeft % 60);
+
+    document.getElementById('day_count').innerText = padNum(d);
+    document.getElementById('hour_count').innerText = padNum(h);
+    document.getElementById('minute_count').innerText = padNum(m);
+    document.getElementById('second_count').innerText = padNum(s);
+
+    secondsLeft--;
+
+    if (secondsLeft <= 0) {
+      clearInterval(blinkInterval);
+      /* Show the complete page */
+    }
+  }
+} 
+
+window.onload = function() {
+  blinkInterval = setInterval(blink, 50);
+}
+</script>
+    <h1 class="banner">距離 <a href="http://www.perfume-web.jp/cam/WORLD/">Perfume's Asia Tour</a> 台北站還有：</h1>
+    <div id="counter">
+      <span id="day_count"></span>
+      <span id="hour_count"></span>
+      <span id="minute_count"></span>
+      <span id="second_count"></span>
+    </div>
+  
+  </body>
+</html>
